@@ -1,0 +1,13 @@
+name: Hello7World
+on:
+  push:
+    branches: ["main"]
+    
+jobs:
+  Olamundo: 
+    runs-on: ubuntu:latest
+    
+    steps:
+      - uses: actions/checkout@v3
+      - name: diga
+      - run: echo hello world
