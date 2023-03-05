@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: world_of_warcraft;
+  font-weight: 100;
+}
+
+.App {
+  height: 100vh;
+}
+
+@font-face {
+  font-family: 'world_of_warcraft';
+  src: url('./assets/fonts/LifeCraft_Font.ttf') format('opentype');
+}

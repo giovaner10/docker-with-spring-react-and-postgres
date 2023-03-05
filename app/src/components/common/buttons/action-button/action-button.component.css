@@ -1,0 +1,17 @@
+.action_button {
+  border-radius: 5px;
+  width: 90px;
+  height: 30px;
+  background-color: rgb(150, 112, 7);
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.login_screen_button {
+  background-color: #252525;
+  color: #ababab;
+}
+
+.login_screen_button:hover {
+  color: #ababab77;
+}

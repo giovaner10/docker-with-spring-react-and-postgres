@@ -1,0 +1,15 @@
+api:
+  devolucao:
+    dias: 5
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/racha
+    username: postgres
+    password: 1234
+  jpa:
+    hibernate:
+       ddl-auto: update
+server:
+  error:
+    include-message: always
+

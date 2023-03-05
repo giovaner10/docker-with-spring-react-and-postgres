@@ -1,0 +1,48 @@
+version: "3.1"
+
+services:
+  PostgreSQL:
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=1234
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=racha
+    volumes:
+      - postgresdb_volume:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  api:
+    build:
+      context: .
+      dockerfile: ./racha/Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - PostgreSQL
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://PostgreSQL:5432/racha
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=1234
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+
+  front:
+    build:
+      context: .
+      dockerfile: ./app/Dockerfile
+    depends_on:
+      - api
+    ports:
+      - "3000:3000"
+
+
+
+
+
+volumes:
+  postgresdb_volume:

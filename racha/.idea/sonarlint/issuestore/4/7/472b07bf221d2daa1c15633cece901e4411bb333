@@ -1,0 +1,5 @@
+
+9
+java:S5785;"Use assertSame instead.(ÃÁ«Ùùÿÿÿÿ8¨ì“Åè0
+x
+java:S5778S"bRefactor the code of the lambda to have only one invocation possibly throwing a runtime exception.(¹ş©Ú
