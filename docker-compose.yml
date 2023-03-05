@@ -40,9 +40,5 @@ services:
     ports:
       - "3000:3000"
 
-
-
-
-
 volumes:
   postgresdb_volume:
